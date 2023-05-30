@@ -18,7 +18,8 @@ const routes : Route[] = [
   component: PostAttiviComponent
   },
   {path: 'non-attivi',
-  component: PostPassiviComponent}
+  component: PostPassiviComponent
+  },
 ]
 
 @NgModule({

@@ -1,8 +1,14 @@
-<div *ngFor="let item of infoPost">
-
-<div *ngIf="!item.active">
-  <h5>{{item.title}}</h5>
-  <p>{{item.body}}</p>
-  <p>{{item.id}}</p>
-</div>
-</div>
+<section class="row">
+  <div class="col-sm-4" *ngFor="let item of infoPost">
+    <div *ngIf="!item.active">
+      <div class="card text-bg-danger mb-3">
+        <div class="card-body">
+          <h5 class="card-title">{{item.title}}</h5>
+          <p class="card-text">{{item.body}}</p>
+          <p class="card-text">N°id: {{item.id}}</p>
+          <button class="btn btn-dark" (click)="cancella()">cancella</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
