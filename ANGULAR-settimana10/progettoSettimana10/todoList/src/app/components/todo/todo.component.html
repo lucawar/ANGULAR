@@ -1,0 +1,14 @@
+<div class="container d-flex text-center fluid mb-3 mt-5">
+  <input class="form-control" type="text"  placeholder="TO DO" [(ngModel)]="title" aria-label="TO DO">
+  <button class="btn btn-outline-success ms-2" (click)="nuovaTask(title)">ADD</button>
+</div>
+
+<div class="text-center">
+<div>
+  <h5 *ngFor="let i of tasks">{{i.id}} • {{i.title}}
+    <button class="btn btn-outline-danger" (click)="deleteTask(i)">❌</button>
+    <button class="btn btn-outline-success ms-2" (click)="completati(i)">✅</button>
+  </h5>
+</div>
+</div>
+

@@ -7,6 +7,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { PostAttiviComponent } from './components/post-attivi/post-attivi.component';
 import { PostPassiviComponent } from './components/post-passivi/post-passivi.component';
+import { CardComponent } from './components/card/card.component';
 
 
 
@@ -28,7 +29,8 @@ const routes : Route[] = [
     NavbarComponent,
     HomeComponent,
     PostAttiviComponent,
-    PostPassiviComponent
+    PostPassiviComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

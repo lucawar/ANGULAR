@@ -6,7 +6,7 @@ import { Interfaccia } from '../models/interfaccia';
 })
 export class ServiceService {
 infoPost:Interfaccia[] = [];
-postCancellati: number = 0;
+
   constructor() { }
 
   async getData() {

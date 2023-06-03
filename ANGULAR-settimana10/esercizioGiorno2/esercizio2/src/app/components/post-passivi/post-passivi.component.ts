@@ -10,17 +10,13 @@ import { ServiceService } from 'src/app/service/service.service';
 export class PostPassiviComponent implements OnInit {
 
   infoPost: Interfaccia[] = [];
-postCancellati: number = 0;
+
   constructor(private postSrv: ServiceService) {
     this.postSrv.getData().then((response) => {
       this.infoPost = response;
     });
   }
-  cancella(): void{
-    this.infoPost = this.infoPost.filter(item => item.active !== false);
-    this.postCancellati += 1
-    console.log(this.infoPost)
-  }
+
   ngOnInit(): void {
   }
 
