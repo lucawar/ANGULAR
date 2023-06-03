@@ -24,8 +24,10 @@ export class TodoComponent implements OnInit {
     if (title === '') {
       alert("INSERIRE UNA TASK!!!!");
     } else {
+      setTimeout(() => {
     this.tasksSrv.aggiornaTodo(title);
-    }
+    },2000);
+  }
   }
 
   deleteTask(task: TodosInterface): void {

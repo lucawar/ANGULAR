@@ -15,7 +15,9 @@ export class CompletatiComponent implements OnInit {
   constructor(private tasksSrv: TodosService) { }
 
   ngOnInit(): void {
+    setTimeout(() => {
     this.tasks = this.tasksSrv.recuperaTodo();
+    }, 2000);
   }
 
 }
