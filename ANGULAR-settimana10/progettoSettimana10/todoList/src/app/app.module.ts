@@ -7,14 +7,10 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { CompletatiComponent } from './components/completati/completati.component';
-import { HomeComponent } from './components/home/home.component';
 
 const routes: Route[] = [
   { path: '',
-   component: HomeComponent
-  },
-  { path: 'todo',
-  component: TodoComponent
+   component: TodoComponent
   },
   { path: 'completati',
   component: CompletatiComponent
@@ -27,7 +23,6 @@ const routes: Route[] = [
     NavbarComponent,
     TodoComponent,
     CompletatiComponent,
-    HomeComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule],
   providers: [],
