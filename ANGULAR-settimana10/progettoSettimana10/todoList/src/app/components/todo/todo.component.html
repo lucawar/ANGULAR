@@ -5,7 +5,7 @@
 
 <div class="text-center">
 <div>
-  <h5 *ngFor="let i of tasks">{{i.id}} • {{i.title}}
+  <h5 *ngFor="let i of tasks" [class.completed-task] = "i.completed">{{i.id}} • {{i.title}}
     <button class="btn btn-outline-danger" (click)="deleteTask(i)">❌</button>
     <button class="btn btn-outline-success ms-2" (click)="completati(i)">✅</button>
   </h5>
