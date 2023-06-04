@@ -10,13 +10,14 @@ import { TodosService } from 'src/app/service/todos.service';
 export class CompletatiComponent implements OnInit {
 
   tasks: TodosInterface[] = [];
-
+  recuperoTasks: boolean = true;
 
   constructor(private tasksSrv: TodosService) { }
 
   ngOnInit(): void {
     setTimeout(() => {
     this.tasks = this.tasksSrv.recuperaTodo();
+    this.recuperoTasks = false;
     }, 2000);
   }
 
