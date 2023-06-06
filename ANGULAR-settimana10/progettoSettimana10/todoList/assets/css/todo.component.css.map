@@ -1,1 +1,1 @@
-{"version":3,"sources":[],"names":[],"mappings":"","file":"todo.component.css"}
+{"version":3,"sources":["../../src/app/components/todo/todo.component.scss","todo.component.css"],"names":[],"mappings":"AAAA;EACE,6BAAA;ACCF","file":"todo.component.css"}
