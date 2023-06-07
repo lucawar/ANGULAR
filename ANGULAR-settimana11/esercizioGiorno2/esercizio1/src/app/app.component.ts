@@ -1,6 +1,7 @@
 import { Component,ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -24,13 +25,16 @@ export class AppComponent {
     weakness: ''
   }
 
+  //FORM TD
   ngOnInit(): void {
     this.contenitoreForm.statusChanges?.subscribe(stato => {
       console.log(this.contenitoreForm);
       console.log(`Stato del form: ${stato}`);
   });
+
 }
 
+//FORM TD
 submitForm() {
   console.log(`Form inviato: ${this.contenitoreForm}`);
   this.user.name = this.contenitoreForm.value.name;
@@ -42,4 +46,6 @@ submitForm() {
 
   this.contenitoreForm.reset();
 }
+
+
 }
