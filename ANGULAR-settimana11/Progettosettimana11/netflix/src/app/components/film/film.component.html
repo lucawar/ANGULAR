@@ -1,0 +1,15 @@
+<div class="container mt-4">
+<section class="row">
+  <div style="width: 25%;" class="col-sm-4" *ngFor="let item of films">
+      <div class="card text-bg-danger mb-3">
+        <div class="card-body">
+          <img class="card-img" src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" >
+          <h4 class="card-title">{{item.title}}</h4>
+          <p class="card-text">{{item.overview}}</p>
+          <p class="card-text">{{item.release_date}}</p>
+          <button><i class="bi bi-suit-heart-fill"></i></button>
+        </div>
+      </div>
+  </div>
+</section>
+</div>
