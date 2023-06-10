@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { Route, RouterModule } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -24,7 +25,7 @@ const routes: Route[] = [
    component: RegisterComponent
   },
   {path: 'film',
-  component: FilmComponent
+  component: FilmComponent,
   },
 ]
 

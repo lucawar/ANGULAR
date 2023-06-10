@@ -1,6 +1,20 @@
-p{
+.sfondo {
+  background-image: url(https://e1.pxfuel.com/desktop-wallpaper/510/266/desktop-wallpaper-netflix-netflix-logo-netflix-icon.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+p {
   color: black;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
+
+img {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+

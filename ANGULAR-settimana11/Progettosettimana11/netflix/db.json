@@ -23,6 +23,25 @@
       "password": "$2a$10$5w60AiRs216q6mE4yxS5geckgGmD93VpzJP72A07rLlWL0bEH8mgO",
       "name": "Luca Iannice",
       "id": 4
+    },
+    {
+      "email": "lucaguerra92@yahoo.it",
+      "password": "$2a$10$rNaKBo0P1AIhRoz4yVGODORXNe07/qZO7r8wZK47kWB7oHZz15BdG",
+      "nome": "luca",
+      "id": 5
+    },
+    {
+      "email": "aaa@aaa.com",
+      "password": "$2a$10$gf4.pHuFCNnifA0jnb/52.A7rwDeZVWplY7O4TGqwx78njVqIdL76",
+      "nome": "aaa",
+      "id": 6
+    },
+    {
+      "email": "flavio@ciccio.com",
+      "password": "$2a$10$3pOjNswOhVKEZYgHb/KrauBtyQNYOt3GuxpXpB6Rd6UcS26xgu1Zq",
+      "nome": "flavio",
+      "cognome": "ciccio",
+      "id": 7
     }
   ],
   "favorites": [

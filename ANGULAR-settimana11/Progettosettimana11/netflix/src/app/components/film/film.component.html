@@ -1,15 +1,18 @@
-<div class="container mt-4">
-<section class="row">
-  <div style="width: 25%;" class="col-sm-4" *ngFor="let item of films">
-      <div class="card text-bg-danger mb-3">
-        <div class="card-body">
-          <img class="card-img" src="http://image.tmdb.org/t/p/w500{{item.poster_path}}" >
-          <h4 class="card-title">{{item.title}}</h4>
-          <p class="card-text">{{item.overview}}</p>
-          <p class="card-text">{{item.release_date}}</p>
-          <button><i class="bi bi-suit-heart-fill"></i></button>
+<div class="container-fluid sfondo">
+  <section class="row">
+    <div class="col-sm-4 col-md-3 mb-4" *ngFor="let item of films">
+      <div class="card text-bg-dark shadow mb-5 mt-2 rounded h-100">
+        <div class="card-body m-2">
+          <img class="card-img-top" src="http://image.tmdb.org/t/p/w500{{item.poster_path}}">
+          <h4 class="card-title text-uppercase p-3">{{item.title}}</h4>
+          <p class="card-text text-white rounded-fill">{{item.release_date}}</p>
+        </div>
+        <div class="card-footer d-flex align-items-end">
+          <div class="d-flex align-items-center">
+            <button class="btn"><i class="bi bi-suit-heart-fill text-white"></i></button>
+          </div>
         </div>
       </div>
-  </div>
-</section>
+    </div>
+  </section>
 </div>

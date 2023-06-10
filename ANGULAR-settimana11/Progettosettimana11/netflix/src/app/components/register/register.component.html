@@ -1,1 +1,21 @@
-<p>register works!</p>
+<div class="container-fluid d-flex justify-content-center">
+  <div class="form-login shadow border rounded mt-5 text-center">
+  <h2 class="text-white mt-5">REGISTRATI</h2>
+  <form class="text-center p-3" #form="ngForm" (ngSubmit)="registra(form)">
+      <div class="form-group">
+          <input name="nome" required ngModel class="form-control-sm shadow rounded form" placeholder="Inserisci un nome" id="nome" type="text">
+      </div>
+      <div class="form-group mt-2">
+         <input name="cognome" required ngModel class="form-control-sm shadow rounded form" placeholder="Inserisci un cognome" id="cognome" type="text">
+      </div>
+      <div class="form-group mt-2">
+          <input type="email" name="email" id="email" class="form-control-sm shadow rounded form" placeholder="Inserisci la tua email" required ngModel>
+      </div>
+      <div class="form-group mt-2">
+          <input type="password" id="password" name="password" class="form-control-sm shadow rounded form" placeholder="Inserisci una password" required ngModel>
+      </div>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-danger mt-3">Registrati</button>
+  </form>
+</div>
+</div>
+
