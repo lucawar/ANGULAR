@@ -25,14 +25,14 @@ export class LoginComponent implements OnInit {
     this.authSrv.login(form.value).pipe(
       catchError(error => {
         console.error(error);
-        alert('Login Fallito');
+        alert('LOGIN FALLITO');
         form.reset();
         return of(null);
       })
     ).subscribe(response => {
       if (response) {
-        this.router.navigate(['/']);
-        alert('Login Effettuato');
+        this.router.navigate(['film']);
+        alert('LOGIN EFFETTUATO');
       }
     });
   }

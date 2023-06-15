@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<div class="container-fluid contenitore">
+  <h2 class="text-center">INFO UTENTE:</h2>
+  <div class="mt-5 ms-5">
+    <h3>Nome: {{user?.user?.nome}}</h3>
+    <h3>Email: {{user?.user?.email}} </h3>
+    <h3>Id: {{user?.user?.id}}</h3>
+  </div>
+
+  <div class="text-center">
+    <a class="btn btn-danger" [routerLink]="['film-preferiti']">Film preferiti utenti</a>
+     <!-- <a class="btn btn-primary" [routerLink]="['/profile']">Torna al component padre</a> -->
+  </div>
+
+  <div class="container-fluid">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

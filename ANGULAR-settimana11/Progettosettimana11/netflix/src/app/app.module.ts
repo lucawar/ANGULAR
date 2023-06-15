@@ -12,21 +12,46 @@ import { FilmPreferitiComponent } from './components/film-preferiti/film-preferi
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Route[] = [
-  { path: '',
-   component: LoginComponent
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
-
-  { path: 'profile',
-    component : ProfileComponent
+  {
+    path: 'home',
+    component: HomeComponent,
+    children: [
+      {
+        path: 'login',
+        component: LoginComponent
+      }
+    ]
   },
-  {path: 'register',
-   component: RegisterComponent
+  {
+    path: 'login',
+    component: LoginComponent
   },
-  {path: 'film',
-  component: FilmComponent,
+  {
+    path: 'register',
+    component: RegisterComponent
   },
+  {
+    path: 'film',
+    component: FilmComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileComponent,
+    children: [
+      {
+        path: 'film-preferiti',
+        component: FilmPreferitiComponent
+      }
+    ]
+  }
 ]
 
 @NgModule({
@@ -37,7 +62,8 @@ const routes: Route[] = [
     FilmPreferitiComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    HomeComponent
   ],
   imports: [BrowserModule, RouterModule.forRoot(routes), FormsModule, HttpClientModule],
   providers: [],

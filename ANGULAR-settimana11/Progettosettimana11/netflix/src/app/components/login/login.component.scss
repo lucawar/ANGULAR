@@ -1,22 +1,22 @@
-.container-fluid{
-  min-height: 873px;
+.contenitore {
+  min-height: 100vh;
   background-image: url(https://cdn.cbeditz.com/cbeditz/preview/bighead-gradient-hd-wallpaper-background-hq-11624179916yllrdo3uzu.png);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-.form{
+.form {
   border-color: white;
   background: inherit;
   color: white;
+  border-radius: 50px;
+  text-align: center;
 }
 
-.form-login{
-  width: 400px;
-  margin-top: 10em;
-  height: 300px;
-  background: scroll;
-background-color: black;
+.form-login {
+  width: 50vh;
+  height: 35vh;
+  margin-top: 5em;
+  background-color: black;
 }
-

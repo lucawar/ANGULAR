@@ -12,78 +12,73 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
-  jwtHelper = new JwtHelperService(); // Serve per leggere e validare il token
+  jwtHelper = new JwtHelperService();
   baseURL = environment.baseURL;
-  private authSubj = new BehaviorSubject<null | AuthData>(null); // Serve per comunicare in tempo reale all'applicazione la presenza dell'utente autenticato
+  private authSubj = new BehaviorSubject<null | AuthData>(null);
   utente!: AuthData;
   user$ = this.authSubj.asObservable();
 
 
-  constructor(private http: HttpClient ,private router:Router) { }
+  constructor(private http: HttpClient, private router: Router) { }
 
 
   login(data: { email: string; password: string }) {
     return this.http.post<AuthData>(`${this.baseURL}login`, data).pipe(
-        tap((data) => {
-            console.log(data);
-            this.authSubj.next(data); // Il BehaviourSubject riceve i dati del login per poi passarli alla proprietà user$
-            this.utente = data;
-            console.log(this.utente);
-            localStorage.setItem('user', JSON.stringify(data)); // Il localStorage memorizza l'oggetto utente completo di token
-        }),
-        catchError(this.errors)
+      tap((data) => {
+        console.log(data);
+        this.authSubj.next(data);
+        this.utente = data;
+        console.log(this.utente);
+        localStorage.setItem('user', JSON.stringify(data));
+      }),
+      catchError(this.errors)
     );
-}
+  }
 
-restore() {
+  restore() {
     const user = localStorage.getItem('user');
     if (!user) {
-        return;
+      return;
     }
     const userData: AuthData = JSON.parse(user);
     if (this.jwtHelper.isTokenExpired(userData.accessToken)) {
-        return;
+      return;
     }
     this.authSubj.next(userData);
 
-}
+  }
 
-signup(data: {
+  signup(data: {
     nome: string;
     cognome: string;
     email: string;
     password: string;
-}) {
+  }) {
     return this.http.post(`${this.baseURL}register`, data);
-}
+  }
 
-logout() {
+  logout() {
     this.authSubj.next(null);
     localStorage.removeItem('user');
-    this.router.navigate(['/']);
+    this.router.navigate(['/login']);
     alert("CIAO,RIEFFETTUA IL LOGIN PER ACCEDERE");
-}
+  }
 
 
-private errors(err: any) {
+  private errors(err: any) {
     switch (err.error) {
-        case 'Email already exists':
-            return throwError('Utente già presente');
-            break;
+      case 'Email already exists':
+        return throwError('Utente già presente');
+        break;
 
-        case 'Email format is invalid':
-            return throwError('Formato mail non valido');
-            break;
+      case 'Email format is invalid':
+        return throwError('Formato mail non valido');
+        break;
 
-        default:
-            return throwError('Errore nella chiamata');
-            break;
+      default:
+        return throwError('Errore nella chiamata');
+        break;
     }
-}
-
-
-
-
-
+  }
 }
 

@@ -1,0 +1,21 @@
+.contenitore{
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Netflix_logo_%282%29.svg/2560px-Netflix_logo_%282%29.svg.png);
+  min-height: 100vh;
+  background-color: #EF311F;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+a{
+  color: white;
+}
+
+a:hover{
+  color: black;
+}
+
+h1,h3{
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bolder;
+}

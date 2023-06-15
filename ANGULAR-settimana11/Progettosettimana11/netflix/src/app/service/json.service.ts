@@ -1,18 +1,48 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { Film } from '../models/film';
+import { Favorite } from '../models/favorite';
+import { AuthData } from '../auth/auth.data';
 
 @Injectable({
   providedIn: 'root'
 })
 export class JsonService {
-  private url = 'http://localhost:4201/api/movie/popular';
+
+  baseURL = environment.baseURL;
 
   constructor(private http: HttpClient) { }
-  films: Film[] = []
 
- getFilm():any {
-  return this.http.get(this.url)
+  //RECUPERO CARD FILM
+  getFilm(): any {
+    return this.http.get<Film[]>(`${this.baseURL}movies-popular`)
   }
+
+  //AGGIUNGERE FILM FAVORITI
+  AddFav(fav: Favorite) {
+    return this.http.post<Favorite>(`${this.baseURL}favorites`, fav);
+  }
+
+  //RECUPERO FILM FAVORITI
+  recuperaFav(id: number) {
+    return this.http.get<Favorite[]>(`${this.baseURL}favorites?userId=${id}`);
+  }
+
+  //CANCELLARE FILM FAVORITI
+  deleteFav(id: number) {
+    return this.http.delete(`${this.baseURL}favorites/${id}`)
+  }
+
+  //RECUPERA ID UTENTE
+  recuperoIdUser(): number | null {
+    const user = localStorage.getItem('user');
+    if (user) {
+      const userData: AuthData = JSON.parse(user);
+      return userData.user.id;
+    }
+    return null;
+  }
+
 }
+

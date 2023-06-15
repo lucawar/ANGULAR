@@ -1,20 +1,33 @@
+
 <nav class="navbar navbar-expand-lg bg-dark">
-  <div class="container-fluid">
+ <div class="container-fluid">
+
     <a class="navbar-brand" href="#"></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
       aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-link link-danger text-white active" aria-current="page" [routerLink]="['/']"
-          routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Login</a>
-        <a class="nav-link link-danger text-white" aria-current="page" [routerLink]="['register']"
-          routerLinkActive="active">Registrati</a>
-        <a class="nav-link link-danger text-white" [routerLink]="['profile']" routerLinkActive="active">Profilo</a>
-        <a class="nav-link link-danger text-white" [routerLink]="['film']" routerLinkActive="active">Film</a>
-      </div>
-      <div class="d-flex justify-content-end align-items-center">
+    <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+      <ul class="navbar-nav">
+        <li>
+          <a class="nav-link link-danger text-white active" aria-current="page" [routerLink]="['/']"
+            routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </li>
+        <li>
+          <a class="nav-link link-danger text-white" [routerLink]="['login']" routerLinkActive="active">Login</a>
+        </li>
+        <li>
+          <a class="nav-link link-danger text-white" aria-current="page" [routerLink]="['register']"
+            routerLinkActive="active">Registrati</a>
+        </li>
+        <li>
+          <a class="nav-link link-danger text-white" [routerLink]="['profile']" routerLinkActive="active">Profilo</a>
+        </li>
+        <li>
+          <a class="nav-link link-danger text-white" [routerLink]="['film']" routerLinkActive="active">Film</a>
+        </li>
+      </ul>
+      <div class="d-flex">
         <h6 class="text-white text-uppercase m-2" *ngIf="user">💥 Benvenuto {{ user.user.nome }} 💥</h6>
         <button type="button" class="btn btn-danger ms-2" *ngIf="user" (click)="logout()">LOGOUT</button>
       </div>
