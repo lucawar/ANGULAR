@@ -40,15 +40,18 @@ const routes: Route[] = [
   },
   {
     path: 'film',
-    component: FilmComponent
+    component: FilmComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'profile',
     component: ProfileComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'film-preferiti',
-        component: FilmPreferitiComponent
+        component: FilmPreferitiComponent,
+        canActivate: [AuthGuard]
       }
     ]
   }

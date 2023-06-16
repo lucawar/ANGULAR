@@ -1,21 +1,21 @@
 .contenitore{
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Netflix_logo_%282%29.svg/2560px-Netflix_logo_%282%29.svg.png);
   min-height: 100vh;
-  background-color: #EF311F;
+  background-image: url(https://www.ceotech.it/wp-content/uploads/2022/05/Netflix-offre-a-pochi-laccesso-anticipato-a-film-e-serie.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
 
-a{
+h1,h2{
+  font-weight: bolder;
   color: white;
 }
 
-a:hover{
-  color: black;
+a{
+  color: #EF311F;
 }
 
-h1,h3{
-  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-weight: bolder;
+a:hover{
+  color: #ff9999;
 }
+

@@ -49,6 +49,20 @@
       "nome": "francesca",
       "cognome": "riente",
       "id": 8
+    },
+    {
+      "email": "mario@gmail.com",
+      "password": "$2a$10$LLxYEZscQRCjD6eV1POfteZbGLqaMYUGd8xEpCQPLjoMob7uaHWZu",
+      "nome": "mario",
+      "cognome": "rossi",
+      "id": 9
+    },
+    {
+      "email": "pippoperino@gmail.com",
+      "password": "$2a$10$k7u7Vyoe95ZONaTAdETDNug992OXGJYZ5PinMfysnXAL9aC4y6ga.",
+      "nome": "pippo",
+      "cognome": "paperino",
+      "id": 10
     }
   ],
   "favorites": [
@@ -431,6 +445,46 @@
       "userId": null,
       "movieId": 632357,
       "id": 83
+    },
+    {
+      "userId": 5,
+      "movieId": 632357,
+      "id": 84
+    },
+    {
+      "userId": 5,
+      "movieId": 632357,
+      "id": 85
+    },
+    {
+      "userId": 5,
+      "movieId": 632357,
+      "id": 86
+    },
+    {
+      "userId": 5,
+      "movieId": 632357,
+      "id": 87
+    },
+    {
+      "userId": 8,
+      "movieId": 586047,
+      "id": 88
+    },
+    {
+      "userId": 9,
+      "movieId": 632357,
+      "id": 89
+    },
+    {
+      "userId": 9,
+      "movieId": 632357,
+      "id": 90
+    },
+    {
+      "userId": 9,
+      "movieId": 578701,
+      "id": 91
     }
   ],
   "genres": [

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Router } from '@angular/router';
-import { catchError,of } from 'rxjs';
+import { catchError, of } from 'rxjs';
 
 
 @Component({
@@ -13,7 +13,7 @@ import { catchError,of } from 'rxjs';
 export class LoginComponent implements OnInit {
 
 
-  constructor( private authSrv : AuthService, private router: Router) { }
+  constructor(private authSrv: AuthService, private router: Router) { }
 
 
   ngOnInit(): void {

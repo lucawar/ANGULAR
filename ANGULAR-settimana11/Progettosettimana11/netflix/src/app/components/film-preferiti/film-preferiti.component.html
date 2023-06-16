@@ -1,9 +1,9 @@
 <div class="container-fluid mt-5">
   <div *ngIf="filmFav">
-    <h2>Lista Film preferiti:</h2>
+    <h2 class="text-dark">• Lista Film preferiti •</h2>
     <ul class="mb-5">
-      <li class="ms-5" *ngFor="let item of filmFav"> N° ID:
-        {{ item.movieId }} <button class="btn btn-dark mb-2" (click)="deleteFavorite(item.movieId)">❌</button>
+      <li class="ms-5 text-dark" *ngFor="let item of filmFav"> N° ID FILM:
+        (<span> {{ item.movieId }} </span> )
       </li>
     </ul>
   </div>

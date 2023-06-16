@@ -20,15 +20,10 @@
           <a class="nav-link link-danger text-white" aria-current="page" [routerLink]="['register']"
             routerLinkActive="active">Registrati</a>
         </li>
-        <li>
-          <a class="nav-link link-danger text-white" [routerLink]="['profile']" routerLinkActive="active">Profilo</a>
-        </li>
-        <li>
-          <a class="nav-link link-danger text-white" [routerLink]="['film']" routerLinkActive="active">Film</a>
-        </li>
       </ul>
       <div class="d-flex">
         <h6 class="text-white text-uppercase m-2" *ngIf="user">💥 Benvenuto {{ user.user.nome }} 💥</h6>
+        <button class="btn btn-outline-danger text-white" *ngIf="user" [routerLink]="['/profile']">PROFILO UTENTE</button>
         <button type="button" class="btn btn-danger ms-2" *ngIf="user" (click)="logout()">LOGOUT</button>
       </div>
     </div>

@@ -3,7 +3,6 @@ import { JsonService } from 'src/app/service/json.service';
 import { AuthService } from 'src/app/auth/auth.service';
 import { Film } from 'src/app/models/film';
 import { Favorite } from 'src/app/models/favorite';
-import { Observable } from 'rxjs';
 import { AuthData } from 'src/app/auth/auth.data';
 
 
@@ -16,7 +15,7 @@ export class FilmComponent implements OnInit {
 
   films: Film[] | undefined;
   favorite!: Favorite | null;
-  filmFavorite: Favorite[] | undefined;
+  filmFavorite: Favorite[] = [];
   user!: AuthData
 
 
@@ -32,7 +31,7 @@ export class FilmComponent implements OnInit {
     this.jsonSrv.recuperaFav(this.user?.user?.id!).subscribe((favorites: Favorite[]) => {
 
       this.filmFavorite = favorites;
-      console.log('Film preferiti dagli utenti:',favorites);
+      console.log('Film preferiti dagli utenti:', favorites);
     });
   }
 
@@ -62,9 +61,15 @@ export class FilmComponent implements OnInit {
       };
       this.jsonSrv.AddFav(newFavorite).subscribe((favorite: Favorite) => {
         this.filmFavorite!.push(favorite);
+        alert('FILM AGGIUNTO TRA I PREFERITI')
       });
     }
-
   }
+
+  getIdFav(films: Film): number | undefined {
+    const favorite = this.filmFavorite?.find((f) => f.movieId === films.id);
+    return favorite?.id;
+  }
+
 }
 
