@@ -13,8 +13,7 @@ import { AuthData } from 'src/app/auth/auth.data';
 })
 export class FilmComponent implements OnInit {
 
-  films: Film[] | undefined;
-  favorite!: Favorite | null;
+  films: Film[] = [];
   filmFavorite: Favorite[] = [];
   user!: AuthData
 

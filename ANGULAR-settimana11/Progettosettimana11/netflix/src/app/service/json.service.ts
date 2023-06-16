@@ -29,6 +29,11 @@ export class JsonService {
     return this.http.get<Favorite[]>(`${this.baseURL}favorites?userId=${id}`);
   }
 
+  //DETTAGLI FILM
+  filmDetails(id: number) {
+    return this.http.get<Film>(`${this.baseURL}movies-popular/${id}`);
+  }
+
   //CANCELLARE FILM FAVORITI
   deleteFav(id: number) {
     return this.http.delete(`${this.baseURL}favorites/${id}`)
